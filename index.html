@@ -74,6 +74,14 @@
         font-size: 1.1em;
         cursor: pointer;
         box-shadow: 0 0 15px rgba(195,176,145,0.15);
+        text-decoration: none;
+        display: inline-block;
+        font-weight: bold;
+    }
+    #waitlist-form .cta-btn {
+        width: 100%;
+        max-width: 300px;
+        margin-top: 1em;
     }
     .features, .testimonials {
         max-width: 900px;
@@ -184,7 +192,7 @@ for (let i = 0; i < 100; i++) {
     particles.push({ x: Math.random()*canvas.width, y: Math.random()*canvas.height, r: Math.random()*2+1, dx:(Math.random()-0.5)*0.5, dy:(Math.random()-0.5)*0.5 });
 }
 const animate = () => {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.clearRect(0,0,canvas.width,canvas.height);
     particles.forEach(p => {
         ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2); ctx.fillStyle='#c3b091'; ctx.fill();
         p.x+=p.dx; p.y+=p.dy;
