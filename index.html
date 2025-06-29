@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Remembery — Your Memory, Reinvented</title>
+<title>Remembery — Your Private Memory Pal</title>
 <style>
     * {
         box-sizing: border-box;
@@ -11,29 +11,29 @@
     body {
         margin: 0;
         font-family: 'Segoe UI', Arial, sans-serif;
-        background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
-        color: #fff;
+        background: linear-gradient(135deg, #0c0c0c, #181818);
+        color: #e0e0e0;
         overflow-x: hidden;
         min-height: 100vh;
     }
     header {
         text-align: center;
-        padding: 4em 1em 2em;
+        padding: 5em 1em 2em;
         animation: fadeInDown 1s ease forwards;
     }
     h1 {
         font-size: 3.5em;
         margin: 0;
-        color: #00d1b2;
+        color: #7debd4;
     }
     p.subtitle {
-        font-size: 1.2em;
-        color: #bbb;
+        font-size: 1.1em;
+        color: #b0b0b0;
         margin-top: 0.5em;
     }
     .hero {
         text-align: center;
-        padding: 2em 1em;
+        padding: 1em;
         animation: fadeIn 2s ease forwards;
     }
     .hero h2 {
@@ -43,13 +43,13 @@
     .hero p {
         max-width: 600px;
         margin: 0.5em auto 1.5em;
-        color: #ccc;
+        color: #c7c7c7;
         font-size: 1.1em;
     }
     .cta-btn {
-        background: linear-gradient(90deg, #00d1b2, #00b89d);
-        color: #fff;
-        padding: 1em 2.5em;
+        background: linear-gradient(90deg, #7debd4, #5dd6bf);
+        color: #0c0c0c;
+        padding: 0.9em 2.5em;
         border: none;
         border-radius: 50px;
         font-size: 1.1em;
@@ -57,10 +57,11 @@
         transition: transform 0.3s ease, box-shadow 0.3s ease;
         text-decoration: none;
         display: inline-block;
+        font-weight: bold;
     }
     .cta-btn:hover {
-        transform: translateY(-3px) scale(1.05);
-        box-shadow: 0 0 15px rgba(0, 209, 178, 0.5);
+        transform: translateY(-3px);
+        box-shadow: 0 0 20px rgba(125, 235, 212, 0.4);
     }
     .features {
         display: grid;
@@ -74,22 +75,22 @@
     .feature {
         background: #1a1a1a;
         padding: 2em;
-        border-radius: 12px;
+        border-radius: 15px;
         transition: transform 0.3s ease, box-shadow 0.3s ease;
         text-align: center;
-        border: 1px solid #222;
+        box-shadow: 0 0 8px rgba(125, 235, 212, 0.05);
     }
     .feature:hover {
         transform: translateY(-5px);
-        box-shadow: 0 0 15px rgba(0, 209, 178, 0.3);
+        box-shadow: 0 0 15px rgba(125, 235, 212, 0.2);
     }
     .feature h3 {
-        color: #00d1b2;
+        color: #7debd4;
         margin-bottom: 0.5em;
     }
     .waitlist-section {
         text-align: center;
-        margin: 4em auto 2em;
+        margin: 5em auto 2em;
         padding: 0 1em;
         animation: fadeIn 2s ease forwards;
     }
@@ -98,14 +99,14 @@
         max-width: 600px;
         height: 500px;
         border: none;
-        border-radius: 10px;
+        border-radius: 15px;
         margin-top: 1em;
-        box-shadow: 0 0 15px rgba(0, 209, 178, 0.2);
+        box-shadow: 0 0 15px rgba(125, 235, 212, 0.2);
     }
     footer {
         text-align: center;
         padding: 2em;
-        color: #555;
+        color: #666;
         font-size: 0.9em;
     }
     @keyframes fadeIn {
@@ -120,13 +121,17 @@
         from { opacity: 0; transform: translateY(20px); }
         to { opacity: 1; transform: translateY(0); }
     }
+    @media (max-width: 700px) {
+        h1 { font-size: 2.5em; }
+        .hero h2 { font-size: 1.5em; }
+    }
 </style>
 </head>
 <body>
 
 <header>
     <h1>Remembery</h1>
-    <p class="subtitle">Your private, offline memory tracker</p>
+    <p class="subtitle">Your private, offline memory pal</p>
 </header>
 
 <section class="hero">
@@ -142,11 +147,11 @@
     </div>
     <div class="feature">
         <h3>100% Offline</h3>
-        <p>Your data never leaves your device. Private, secure, and fully offline.</p>
+        <p>Your data never leaves your device. Private, secure, fully offline.</p>
     </div>
     <div class="feature">
         <h3>Witty Personality</h3>
-        <p>Like a helpful (but sarcastic) friend. Memory tracking with personality.</p>
+        <p>Like a helpful (sometimes sarcastic) friend. Memory tracking with personality.</p>
     </div>
 </section>
 
