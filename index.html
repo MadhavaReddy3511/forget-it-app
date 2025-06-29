@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Remembery — Your Memory, Reinvented</title>
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
     body {
       margin: 0;
       font-family: 'Segoe UI', Arial, sans-serif;
@@ -45,6 +48,7 @@
       margin-top: 1em;
       transition: background 0.3s ease, transform 0.3s ease;
       animation: fadeInUp 2s ease forwards;
+      display: inline-block;
     }
     .cta-btn:hover {
       background-color: #00b89d;
@@ -109,12 +113,12 @@
 <body>
 
   <h1>Remembery</h1>
-  <p class="subtitle">Your private, offline memory pal</p>
+  <p class="subtitle">Your personal, offline memory tracker</p>
 
   <p class="hero-text">Never lose your keys again</p>
   <p>Log items in one tap. Recall them offline. Zero data shared.</p>
 
-  <a href="#waitlist" class="cta-btn">Join Waitlist</a>
+  <a href="#waitlist" class="cta-btn">Get Started</a>
 
   <div class="features">
     <div class="feature">
