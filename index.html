@@ -1,112 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RecallFox - Offline Memory Companion</title>
-  <style>
-    :root {
-      --teal: #2a9d8f;
-      --amber: #f4a261;
-      --slate: #2b2d42;
-      --light: #f8f9fa;
-    }
-    body {
-      font-family: 'Inter', -apple-system, sans-serif;
-      line-height: 1.6;
-      color: var(--slate);
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 2rem;
-      text-align: center;
-    }
-    h1 { color: var(--teal); font-size: 3rem; margin-bottom: 0.5rem; }
-    .tagline { font-size: 1.2rem; opacity: 0.8; margin-bottom: 3rem; }
-    .cta-button {
-      background: var(--teal);
-      color: white;
-      padding: 0.8rem 2rem;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 500;
-      display: inline-block;
-      margin: 1rem 0;
-      transition: transform 0.2s;
-    }
-    .cta-button:hover { transform: translateY(-3px); }
-    .features {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 2rem;
-      margin: 3rem 0;
-    }
-    .feature {
-      flex: 1;
-      min-width: 200px;
-      padding: 1.5rem;
-      border-radius: 12px;
-      background: rgba(42, 157, 143, 0.1);
-    }
-    hr {
-      border: 0;
-      height: 1px;
-      background: linear-gradient(to right, transparent, var(--teal), transparent);
-      margin: 3rem 0;
-    }
-    form {
-      display: flex;
-      flex-direction: column;
-      max-width: 400px;
-      margin: 0 auto;
-    }
-    input {
-      padding: 0.8rem;
-      margin: 0.5rem 0;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      font-size: 1rem;
-    }
-    @media (prefers-color-scheme: dark) {
-      body { background: #121212; color: white; }
-      .feature { background: rgba(42, 157, 143, 0.2); }
-    }
-  </style>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remembery — Never Forget Again</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background: linear-gradient(135deg, #121212, #1f1f1f);
+            color: #fff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        h1 {
+            font-size: 3em;
+            margin-bottom: 0.5em;
+            color: #00d1b2;
+        }
+        p {
+            font-size: 1.2em;
+            max-width: 500px;
+            margin-bottom: 2em;
+            color: #ccc;
+        }
+        .cta-btn {
+            background-color: #00d1b2;
+            color: #fff;
+            padding: 0.8em 1.5em;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+        .cta-btn:hover {
+            background-color: #00b89d;
+        }
+        footer {
+            position: absolute;
+            bottom: 20px;
+            font-size: 0.9em;
+            color: #555;
+        }
+    </style>
 </head>
 <body>
-  <h1>RecallFox</h1>
-  <p class="tagline">Your private, offline memory pal</p>
-  
-  <hr>
 
-  <h2>Never lose your keys again</h2>
-  <p>Log items in one tap. Recall them offline. Zero data shared.</p>
-  <a href="#waitlist" class="cta-button">Join Waitlist</a>
+    <h1>Remembery</h1>
+    <p>Your personal memory tracker. Never forget where you left things again.</p>
+    <a href="#get-started" class="cta-btn">Get Started</a>
 
-  <div class="features">
-    <div class="feature">
-      <h3>1-Tap Logging</h3>
-      <p>Photo, voice, or text—your choice.</p>
-    </div>
-    <div class="feature">
-      <h3>100% Offline</h3>
-      <p>Your data never leaves your device.</p>
-    </div>
-    <div class="feature">
-      <h3>Witty Personality</h3>
-      <p>Like a helpful (but sarcastic) friend.</p>
-    </div>
-  </div>
+    <footer>&copy; 2025 Remembery — Made with ❤️ on GitHub Pages</footer>
 
-  <hr>
-
-  <section id="waitlist">
-    <h2>Get Early Access</h2>
-    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-      <input type="email" name="email" placeholder="Your email" required>
-      <button type="submit" class="cta-button">Notify Me</button>
-    </form>
-  </section>
 </body>
 </html>
