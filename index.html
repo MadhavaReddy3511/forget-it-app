@@ -3,164 +3,106 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Remembery — Your Private Memory Pal</title>
-
-<meta name="description" content="Remembery is your private, offline memory tracker. Quickly log items, track where you placed them, and recall details — all without cloud storage or tracking." />
-<meta name="keywords" content="offline memory app, private notes, forgetfulness tracker, key tracker, privacy tools, 1-tap logging, secure memory tool" />
+<title>Remembery — Private, Offline Memory Tracker | 1-Tap Logging</title>
+<meta name="description" content="Remembery is your private, offline memory tracker. Quickly log items, track where you placed them, and recall details — all without cloud storage or tracking.">
+<meta name="keywords" content="offline memory app, private notes, forgetfulness tracker, key tracker, privacy tools, 1-tap logging, secure memory tool">
 <meta name="author" content="Team Remembery">
-
-<!-- Open Graph for Social Sharing -->
-<meta property="og:title" content="Remembery — Your Private, Offline Memory Pal" />
-<meta property="og:description" content="1-Tap logging, zero cloud, 100% private. Never forget where you placed things again." />
-<meta property="og:image" content="https://yourdomain.com/preview.png" />
-<meta property="og:url" content="https://madhavareddy3511.github.io/remembery/" />
-<meta property="og:type" content="website" />
-
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Remembery — Private, Offline Memory Tracker">
-<meta name="twitter:description" content="Track your stuff, remember things better, stay private. No cloud, no worries.">
-<meta name="twitter:image" content="https://yourdomain.com/preview.png">
 <style>
-    * { box-sizing: border-box; }
-    html {
-        scroll-behavior: smooth;
-    }
-    body {
-        margin: 0;
-        font-family: 'Segoe UI', Arial, sans-serif;
-        background: radial-gradient(circle at top left, rgba(195,176,145,0.05) 0%, transparent 70%),
-                    radial-gradient(circle at bottom right, rgba(138,189,168,0.05) 0%, transparent 70%),
-                    linear-gradient(135deg, #0c0c0c, #181818);
-        color: #e0e0e0;
-        overflow-x: hidden;
-        min-height: 100vh;
-    }
-    section, header, footer {
-        scroll-snap-align: start;
-    }
-    canvas.particles {
-        position: fixed;
-        top: 0; left: 0;
-        width: 100%; height: 100%;
-        z-index: 0;
-        pointer-events: none;
-        opacity: 0.15;
-    }
-    .background-float {
-        position: absolute;
-        top: -200px;
-        left: -200px;
-        width: 500px;
-        height: 500px;
-        background: radial-gradient(circle, rgba(195,176,145,0.15) 0%, transparent 70%);
-        filter: blur(80px);
-        animation: float 12s ease-in-out infinite alternate;
-        z-index: 0;
-    }
-    @keyframes float {
-        from { transform: translate(0, 0); }
-        to { transform: translate(100px, 100px); }
-    }
-    header {
-        text-align: center;
-        padding: 6em 1em 2em;
-        z-index: 1;
-    }
-    h1 {
-        font-size: 3.5em;
-        margin: 0;
-        color: #c3b091;
-    }
-    p.subtitle {
-        font-size: 1.1em;
-        color: #b0b0b0;
-    }
-    .hero, .features, .testimonials, .waitlist-section {
-        text-align: center;
-        padding: 2em 1em;
-        z-index: 1;
-    }
-    .cta-btn {
-        background: linear-gradient(90deg, #c3b091, #8abda8);
-        color: #0c0c0c;
-        padding: 1em 2.5em;
-        border: none;
-        border-radius: 50px;
-        font-size: 1.1em;
-        cursor: pointer;
-        box-shadow: 0 0 15px rgba(195,176,145,0.15);
-        text-decoration: none;
-        display: inline-block;
-        font-weight: bold;
-    }
-    #waitlist-form .cta-btn {
-        width: 100%;
-        max-width: 300px;
-        margin-top: 1em;
-    }
-    .features, .testimonials {
-        max-width: 900px;
-        margin: 4em auto;
-        display: grid;
-        gap: 2em;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    }
-    .feature, .testimonial {
-        background: #1a1a1a;
-        padding: 2em;
-        border-radius: 15px;
-        box-shadow: 0 0 15px rgba(195,176,145,0.08);
-    }
-    .feature h3, .testimonial span {
-        color: #c3b091;
-    }
-    .testimonial p {
-        font-style: italic;
-    }
-    footer {
-        text-align: center;
-        padding: 2em;
-        border-top: 1px solid #333;
-        color: #666;
-    }
-    footer .team {
-        color: #c3b091;
-        font-weight: bold;
-    }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: radial-gradient(circle at top left, rgba(195,176,145,0.05) 0%, transparent 70%),
+                radial-gradient(circle at bottom right, rgba(138,189,168,0.05) 0%, transparent 70%),
+                linear-gradient(135deg, #0c0c0c, #181818);
+    color: #e0e0e0;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+header, section, footer { text-align: center; padding: 2em 1em; position: relative; z-index: 1; }
+h1 { font-size: 3.5em; margin: 0; color: #c3b091; }
+p.subtitle { font-size: 1.1em; color: #b0b0b0; }
+.hero h2 { font-size: 2em; margin: 0.5em 0; }
+.hero p { max-width: 600px; margin: 0.5em auto 1.5em; color: #c7c7c7; font-size: 1.1em; }
+.cta-btn {
+    background: linear-gradient(90deg, #c3b091, #8abda8);
+    color: #0c0c0c;
+    padding: 1em 2.5em;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1em;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(195,176,145,0.15);
+    text-decoration: none;
+    display: inline-block;
+    font-weight: bold;
+}
+#waitlist-form .cta-btn { width: 100%; max-width: 300px; margin-top: 1em; }
+.features, .testimonials {
+    max-width: 900px;
+    margin: 4em auto;
+    display: grid;
+    gap: 2em;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+.feature, .testimonial {
+    background: #1a1a1a;
+    padding: 2em;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(195,176,145,0.08);
+}
+.feature h3, .testimonial span { color: #c3b091; }
+.testimonial p { font-style: italic; }
+footer { text-align: center; padding: 2em; border-top: 1px solid #333; color: #666; }
+footer .team { color: #c3b091; font-weight: bold; }
+canvas.particles {
+    position: fixed; top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.15;
+}
+.background-float {
+    position: absolute; top: -200px; left: -200px;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(195,176,145,0.15) 0%, transparent 70%);
+    filter: blur(80px);
+    animation: float 12s ease-in-out infinite alternate;
+    z-index: 0;
+}
+@keyframes float {
+    from { transform: translate(0, 0); }
+    to { transform: translate(100px, 100px); }
+}
 </style>
 </head>
 <body>
-
 <canvas class="particles"></canvas>
 <div class="background-float"></div>
-
 <header>
     <h1>Remembery</h1>
-    <p class="subtitle">Your private, offline memory pal</p>
+    <p class="subtitle">Your private, offline memory tracker. Quickly log where you placed things, recall them anytime — 100% secure, no cloud needed.</p>
 </header>
-
 <section class="hero">
-    <h2>Never lose your keys again</h2>
-    <p>Log items in one tap. Recall them offline. Zero data shared. Your memory, reinvented.</p>
+    <h2>Never lose your keys again — stay organized with Remembery</h2>
+    <p>Your private, offline memory tool. Save items, locations, or notes with 1-tap logging — fast, simple, secure.</p>
     <a href="#waitlist" class="cta-btn">Join the Waitlist</a>
 </section>
-
 <section class="features">
     <div class="feature">
         <h3>1-Tap Logging</h3>
-        <p>Photo, voice, or text — save items instantly with minimal effort.</p>
+        <p>Save notes, locations, or lost items instantly. A fast, offline memory tool for forgetful moments.</p>
     </div>
     <div class="feature">
-        <h3>100% Offline</h3>
-        <p>Your data never leaves your device. Private, secure, fully offline.</p>
+        <h3>100% Private & Offline</h3>
+        <p>Your memory stays on your device. No cloud storage, no tracking, no privacy worries.</p>
     </div>
     <div class="feature">
         <h3>Witty Personality</h3>
-        <p>Like a helpful (sometimes sarcastic) friend. Memory tracking with personality.</p>
+        <p>Remembery keeps memory tracking simple — fun, fast, and fully private.</p>
     </div>
 </section>
-
 <section class="testimonials">
     <div class="testimonial">
         <p>"Remembery saved me from losing my keys — finally peace of mind."</p>
@@ -175,25 +117,22 @@
         <span>— Eswar</span>
     </div>
 </section>
-
 <section class="waitlist-section" id="waitlist">
-    <h2>Join the Waitlist</h2>
+    <h2>Be the first to try Remembery — your private memory tracker</h2>
     <div class="form-container" style="background:#1a1a1a; max-width:600px; margin:2em auto; padding:2em; border-radius:15px; box-shadow:0 0 20px rgba(195,176,145,0.15);">
         <form id="waitlist-form">
             <input type="email" id="email" name="email" placeholder="Your email" required 
                    style="padding:1em; border-radius:8px; width:80%; max-width:300px; border:none; margin-bottom:1em;">
             <br>
-            <button type="submit" class="cta-btn">Notify Me</button>
+            <button type="submit" class="cta-btn">Get Early Access</button>
             <p id="form-status" style="margin-top:1em;"></p>
         </form>
     </div>
 </section>
-
 <footer>
     &copy; 2025 Remembery — Made with ❤️ on GitHub Pages<br>
     <div class="team">Team Remembery</div>
 </footer>
-
 <script>
 const canvas = document.querySelector('.particles');
 const ctx = canvas.getContext('2d');
@@ -218,12 +157,10 @@ const animate = () => {
     requestAnimationFrame(animate);
 };
 animate();
-
 document.getElementById('waitlist-form').addEventListener('submit', function(e){
     e.preventDefault();
     const email = document.getElementById('email').value;
     const status = document.getElementById('form-status');
-    
     fetch('https://sheetdb.io/api/v1/5fz8argfzc8pt', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -240,6 +177,5 @@ document.getElementById('waitlist-form').addEventListener('submit', function(e){
     .catch(() => status.innerText = "Error. Please try again.");
 });
 </script>
-
 </body>
 </html>
