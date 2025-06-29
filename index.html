@@ -1,163 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Remembery — Your Offline Memory Pal</title>
-  <style>
-    html {
-      scroll-behavior: smooth;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Remembery — Your Memory, Reinvented</title>
+<style>
+    * {
+        box-sizing: border-box;
     }
     body {
-      margin: 0;
-      font-family: 'Segoe UI', Arial, sans-serif;
-      background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
-      color: #fff;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-      text-align: center;
-      overflow-x: hidden;
+        margin: 0;
+        font-family: 'Segoe UI', Arial, sans-serif;
+        background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
+        color: #fff;
+        overflow-x: hidden;
+        min-height: 100vh;
     }
     header {
-      padding: 2em 1em 1em;
-      animation: fadeInDown 1s ease forwards;
+        text-align: center;
+        padding: 4em 1em 2em;
+        animation: fadeInDown 1s ease forwards;
     }
     h1 {
-      font-size: 3em;
-      color: #00d1b2;
-      margin: 0;
+        font-size: 3.5em;
+        margin: 0;
+        color: #00d1b2;
     }
     p.subtitle {
-      color: #aaa;
-      margin: 0.5em 0 2em;
-      font-size: 1.2em;
+        font-size: 1.2em;
+        color: #bbb;
+        margin-top: 0.5em;
     }
     .hero {
-      padding: 1em;
-      animation: fadeIn 2s ease forwards;
+        text-align: center;
+        padding: 2em 1em;
+        animation: fadeIn 2s ease forwards;
     }
-    .hero-text {
-      font-size: 1.8em;
-      margin: 0.5em 0;
+    .hero h2 {
+        font-size: 2em;
+        margin: 0.5em 0;
     }
-    .hero-description {
-      max-width: 600px;
-      margin: 0 auto 1.5em;
-      color: #ccc;
+    .hero p {
+        max-width: 600px;
+        margin: 0.5em auto 1.5em;
+        color: #ccc;
+        font-size: 1.1em;
     }
     .cta-btn {
-      background-color: #00d1b2;
-      color: #fff;
-      padding: 0.9em 2em;
-      border: none;
-      border-radius: 50px;
-      font-size: 1em;
-      text-decoration: none;
-      cursor: pointer;
-      transition: background 0.3s ease, transform 0.3s ease;
-      display: inline-block;
-      animation: fadeInUp 2s ease forwards;
+        background: linear-gradient(90deg, #00d1b2, #00b89d);
+        color: #fff;
+        padding: 1em 2.5em;
+        border: none;
+        border-radius: 50px;
+        font-size: 1.1em;
+        cursor: pointer;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        text-decoration: none;
+        display: inline-block;
     }
     .cta-btn:hover {
-      background-color: #00b89d;
-      transform: scale(1.05);
+        transform: translateY(-3px) scale(1.05);
+        box-shadow: 0 0 15px rgba(0, 209, 178, 0.5);
     }
     .features {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 1em;
-      max-width: 900px;
-      margin: 3em auto;
-      padding: 1em;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 2em;
+        max-width: 900px;
+        margin: 4em auto;
+        padding: 0 1em;
+        animation: fadeInUp 1.5s ease forwards;
     }
     .feature {
-      background-color: #1f1f1f;
-      padding: 2em;
-      border-radius: 10px;
-      transition: transform 0.3s ease, background 0.3s ease;
-      animation: fadeInUp 1s ease forwards;
+        background: #1a1a1a;
+        padding: 2em;
+        border-radius: 12px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        text-align: center;
+        border: 1px solid #222;
     }
     .feature:hover {
-      background-color: #272727;
-      transform: translateY(-5px);
+        transform: translateY(-5px);
+        box-shadow: 0 0 15px rgba(0, 209, 178, 0.3);
     }
     .feature h3 {
-      color: #00d1b2;
-      margin-top: 0;
+        color: #00d1b2;
+        margin-bottom: 0.5em;
+    }
+    .waitlist-section {
+        text-align: center;
+        margin: 4em auto 2em;
+        padding: 0 1em;
+        animation: fadeIn 2s ease forwards;
     }
     iframe {
-      margin: 2em auto;
-      width: 90%;
-      max-width: 600px;
-      height: 500px;
-      border: none;
-      border-radius: 8px;
-      animation: fadeIn 2s ease forwards;
+        width: 90%;
+        max-width: 600px;
+        height: 500px;
+        border: none;
+        border-radius: 10px;
+        margin-top: 1em;
+        box-shadow: 0 0 15px rgba(0, 209, 178, 0.2);
     }
     footer {
-      margin-top: auto;
-      padding: 2em;
-      color: #555;
-      font-size: 0.9em;
+        text-align: center;
+        padding: 2em;
+        color: #555;
+        font-size: 0.9em;
     }
-    @media (max-width: 800px) {
-      .features {
-        grid-template-columns: 1fr;
-      }
-      h1 { font-size: 2.2em; }
-      .hero-text { font-size: 1.5em; }
-    }
-
-    /* Animations */
     @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+        from { opacity: 0; }
+        to { opacity: 1; }
     }
     @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-20px); }
-      to { opacity: 1; transform: translateY(0); }
+        from { opacity: 0; transform: translateY(-20px); }
+        to { opacity: 1; transform: translateY(0); }
     }
-  </style>
+    @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+</style>
 </head>
 <body>
 
-  <header>
+<header>
     <h1>Remembery</h1>
-    <p class="subtitle">Your private, offline memory pal</p>
-  </header>
+    <p class="subtitle">Your private, offline memory tracker</p>
+</header>
 
-  <section class="hero">
-    <p class="hero-text">Never lose your keys again</p>
-    <p class="hero-description">Log items in one tap. Recall them offline. Zero data shared. Your memory, reinvented.</p>
-    <a href="#waitlist" class="cta-btn">Join Waitlist</a>
-  </section>
+<section class="hero">
+    <h2>Never lose your keys again</h2>
+    <p>Log items in one tap. Recall them offline. Zero data shared. Your memory, reinvented.</p>
+    <a href="#waitlist" class="cta-btn">Join the Waitlist</a>
+</section>
 
-  <section class="features">
+<section class="features">
     <div class="feature">
-      <h3>1-Tap Logging</h3>
-      <p>Photo, voice, or text — your choice. Save it instantly.</p>
+        <h3>1-Tap Logging</h3>
+        <p>Photo, voice, or text — save items instantly with minimal effort.</p>
     </div>
     <div class="feature">
-      <h3>100% Offline</h3>
-      <p>Your data stays with you. Private, secure, always offline.</p>
+        <h3>100% Offline</h3>
+        <p>Your data never leaves your device. Private, secure, and fully offline.</p>
     </div>
     <div class="feature">
-      <h3>Witty Personality</h3>
-      <p>Like a helpful (sometimes sarcastic) friend in your pocket.</p>
+        <h3>Witty Personality</h3>
+        <p>Like a helpful (but sarcastic) friend. Memory tracking with personality.</p>
     </div>
-  </section>
+</section>
 
-  <h3 id="waitlist">Join the Waitlist</h3>
-  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScjPQxZDzWZmLYoXE6vk6ME7305WALcwoPGtZ-VVEeCsSPx0Q/viewform?embedded=true">Loading…</iframe>
+<section class="waitlist-section" id="waitlist">
+    <h2>Join the Waitlist</h2>
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScjPQxZDzWZmLYoXE6vk6ME7305WALcwoPGtZ-VVEeCsSPx0Q/viewform?embedded=true">Loading…</iframe>
+</section>
 
-  <footer>
+<footer>
     &copy; 2025 Remembery — Made with ❤️ on GitHub Pages
-  </footer>
+</footer>
 
 </body>
 </html>
