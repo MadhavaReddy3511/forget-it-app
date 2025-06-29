@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Remembery — Your Memory, Reinvented</title>
+  <title>Remembery — Your Offline Memory Pal</title>
   <style>
     html {
       scroll-behavior: smooth;
@@ -11,44 +11,53 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', Arial, sans-serif;
-      background-color: #0d0d0d;
+      background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
       color: #fff;
-      text-align: center;
       display: flex;
       flex-direction: column;
       min-height: 100vh;
+      text-align: center;
       overflow-x: hidden;
     }
-    h1 {
-      color: #00d1b2;
-      font-size: 3em;
-      margin-top: 2em;
+    header {
+      padding: 2em 1em 1em;
       animation: fadeInDown 1s ease forwards;
+    }
+    h1 {
+      font-size: 3em;
+      color: #00d1b2;
+      margin: 0;
     }
     p.subtitle {
       color: #aaa;
       margin: 0.5em 0 2em;
+      font-size: 1.2em;
+    }
+    .hero {
+      padding: 1em;
       animation: fadeIn 2s ease forwards;
     }
     .hero-text {
-      font-size: 1.5em;
-      margin-bottom: 0.5em;
-      color: #fff;
-      animation: fadeInUp 1.5s ease forwards;
+      font-size: 1.8em;
+      margin: 0.5em 0;
+    }
+    .hero-description {
+      max-width: 600px;
+      margin: 0 auto 1.5em;
+      color: #ccc;
     }
     .cta-btn {
       background-color: #00d1b2;
       color: #fff;
-      padding: 0.8em 2em;
+      padding: 0.9em 2em;
       border: none;
-      border-radius: 5px;
+      border-radius: 50px;
       font-size: 1em;
       text-decoration: none;
       cursor: pointer;
-      margin-top: 1em;
       transition: background 0.3s ease, transform 0.3s ease;
-      animation: fadeInUp 2s ease forwards;
       display: inline-block;
+      animation: fadeInUp 2s ease forwards;
     }
     .cta-btn:hover {
       background-color: #00b89d;
@@ -56,24 +65,27 @@
     }
     .features {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
       gap: 1em;
-      max-width: 700px;
+      max-width: 900px;
       margin: 3em auto;
-      width: 90%;
+      padding: 1em;
     }
     .feature {
-      background-color: #1a1a1a;
-      padding: 1.5em;
-      border-radius: 8px;
-      opacity: 0;
-      transform: translateY(20px);
+      background-color: #1f1f1f;
+      padding: 2em;
+      border-radius: 10px;
+      transition: transform 0.3s ease, background 0.3s ease;
       animation: fadeInUp 1s ease forwards;
     }
-    .feature:nth-child(1) { animation-delay: 0.5s; }
-    .feature:nth-child(2) { animation-delay: 1s; }
-    .feature:nth-child(3) { animation-delay: 1.5s; grid-column: span 2; }
-
+    .feature:hover {
+      background-color: #272727;
+      transform: translateY(-5px);
+    }
+    .feature h3 {
+      color: #00d1b2;
+      margin-top: 0;
+    }
     iframe {
       margin: 2em auto;
       width: 90%;
@@ -89,10 +101,12 @@
       color: #555;
       font-size: 0.9em;
     }
-    @media (max-width: 600px) {
+    @media (max-width: 800px) {
       .features {
         grid-template-columns: 1fr;
       }
+      h1 { font-size: 2.2em; }
+      .hero-text { font-size: 1.5em; }
     }
 
     /* Animations */
@@ -112,31 +126,34 @@
 </head>
 <body>
 
-  <h1>Remembery</h1>
-  <p class="subtitle">Your personal, offline memory tracker</p>
+  <header>
+    <h1>Remembery</h1>
+    <p class="subtitle">Your private, offline memory pal</p>
+  </header>
 
-  <p class="hero-text">Never lose your keys again</p>
-  <p>Log items in one tap. Recall them offline. Zero data shared.</p>
+  <section class="hero">
+    <p class="hero-text">Never lose your keys again</p>
+    <p class="hero-description">Log items in one tap. Recall them offline. Zero data shared. Your memory, reinvented.</p>
+    <a href="#waitlist" class="cta-btn">Join Waitlist</a>
+  </section>
 
-  <a href="#waitlist" class="cta-btn">Get Started</a>
-
-  <div class="features">
+  <section class="features">
     <div class="feature">
       <h3>1-Tap Logging</h3>
-      <p>Photo, voice, or text—your choice.</p>
+      <p>Photo, voice, or text — your choice. Save it instantly.</p>
     </div>
     <div class="feature">
       <h3>100% Offline</h3>
-      <p>Your data never leaves your device.</p>
+      <p>Your data stays with you. Private, secure, always offline.</p>
     </div>
     <div class="feature">
       <h3>Witty Personality</h3>
-      <p>Like a helpful (but sarcastic) friend.</p>
+      <p>Like a helpful (sometimes sarcastic) friend in your pocket.</p>
     </div>
-  </div>
+  </section>
 
   <h3 id="waitlist">Join the Waitlist</h3>
-  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdTxMvKmERHDvTHhNExbEw9JKAr4N7Fk5zzpbTz1XhOB02GCw/viewform?embedded=true">Loading…</iframe>
+  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScjPQxZDzWZmLYoXE6vk6ME7305WALcwoPGtZ-VVEeCsSPx0Q/viewform?embedded=true">Loading…</iframe>
 
   <footer>
     &copy; 2025 Remembery — Made with ❤️ on GitHub Pages
