@@ -13,33 +13,17 @@
     body {
         margin: 0;
         font-family: 'Segoe UI', Arial, sans-serif;
-        background: linear-gradient(135deg, #0c0c0c, #181818);
+        background: radial-gradient(circle at top left, rgba(195,176,145,0.05) 0%, transparent 70%),
+                    radial-gradient(circle at bottom right, rgba(138,189,168,0.05) 0%, transparent 70%),
+                    linear-gradient(135deg, #0c0c0c, #181818);
         color: #e0e0e0;
         overflow-x: hidden;
         min-height: 100vh;
-        transition: background 0.5s, color 0.5s;
-    }
-    body.light {
-        background: linear-gradient(135deg, #f9f9f9, #e2e2e2);
-        color: #111;
     }
     section, header, footer {
         scroll-snap-align: start;
     }
-    .toggle-theme {
-        position: fixed;
-        top: 1em;
-        right: 1em;
-        background: #c3b091;
-        color: #0c0c0c;
-        border: none;
-        border-radius: 50px;
-        padding: 0.5em 1em;
-        cursor: pointer;
-        z-index: 10;
-        font-weight: bold;
-    }
-    canvas.particles, .floating-icons {
+    canvas.particles {
         position: fixed;
         top: 0; left: 0;
         width: 100%; height: 100%;
@@ -47,20 +31,34 @@
         pointer-events: none;
         opacity: 0.15;
     }
-    .floating-icons img {
+    .background-float {
         position: absolute;
-        width: 30px;
-        height: 30px;
-        animation: drift 20s infinite alternate ease-in-out;
+        top: -200px;
+        left: -200px;
+        width: 500px;
+        height: 500px;
+        background: radial-gradient(circle, rgba(195,176,145,0.15) 0%, transparent 70%);
+        filter: blur(80px);
+        animation: float 12s ease-in-out infinite alternate;
+        z-index: 0;
     }
-    @keyframes drift {
+    @keyframes float {
         from { transform: translate(0, 0); }
-        to { transform: translate(50px, 50px); }
+        to { transform: translate(100px, 100px); }
     }
     header {
+        position: relative;
         text-align: center;
         padding: 6em 1em 2em;
+        overflow: hidden;
         z-index: 1;
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s ease;
+    }
+    header.visible {
+        opacity: 1;
+        transform: translateY(0);
     }
     h1 {
         font-size: 3.5em;
@@ -70,11 +68,30 @@
     p.subtitle {
         font-size: 1.1em;
         color: #b0b0b0;
+        margin-top: 0.5em;
     }
     .hero, .features, .testimonials, .waitlist-section {
         text-align: center;
         padding: 2em 1em;
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s ease;
         z-index: 1;
+        position: relative;
+    }
+    .visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    .hero h2 {
+        font-size: 2em;
+        margin: 0.5em 0;
+    }
+    .hero p {
+        max-width: 600px;
+        margin: 0.5em auto 1.5em;
+        color: #c7c7c7;
+        font-size: 1.1em;
     }
     .cta-btn {
         background: linear-gradient(90deg, #c3b091, #8abda8);
@@ -84,7 +101,15 @@
         border-radius: 50px;
         font-size: 1.1em;
         cursor: pointer;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        text-decoration: none;
+        display: inline-block;
+        font-weight: bold;
         box-shadow: 0 0 15px rgba(195,176,145,0.15);
+    }
+    .cta-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 0 25px rgba(195,176,145,0.3);
     }
     .features, .testimonials {
         max-width: 900px;
@@ -97,45 +122,64 @@
         background: #1a1a1a;
         padding: 2em;
         border-radius: 15px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        text-align: center;
         box-shadow: 0 0 15px rgba(195,176,145,0.08);
-        transition: transform 0.3s, box-shadow 0.3s;
+        position: relative;
     }
+    .feature:nth-child(odd) { transform: translateY(5px); }
+    .feature:nth-child(even) { transform: translateY(-5px); }
+    .testimonial:nth-child(odd) { transform: translateY(10px); }
+    .testimonial:nth-child(even) { transform: translateY(-10px); }
     .feature:hover, .testimonial:hover {
-        transform: translateY(-5px);
+        transform: translateY(0) scale(1.02);
         box-shadow: 0 0 25px rgba(195,176,145,0.2);
     }
-    .feature h3, .testimonial span {
+    .feature h3 {
         color: #c3b091;
+        margin-bottom: 0.5em;
     }
-    .waitlist-section .form-container {
-        background: #1a1a1a;
+    .testimonial p {
+        font-style: italic;
+        margin-bottom: 0.5em;
+    }
+    .testimonial span {
+        display: block;
+        margin-top: 0.5em;
+        color: #c3b091;
+        font-weight: bold;
+    }
+    .waitlist-section iframe {
+        width: 90%;
         max-width: 600px;
-        margin: 2em auto;
-        padding: 2em;
+        height: 500px;
+        border: none;
         border-radius: 15px;
-        box-shadow: 0 0 20px rgba(195,176,145,0.15);
+        margin-top: 1em;
+        box-shadow: 0 0 15px rgba(195,176,145,0.2);
     }
     footer {
         text-align: center;
         padding: 2em;
-        border-top: 1px solid #333;
         color: #666;
+        font-size: 0.9em;
+        border-top: 1px solid #333;
     }
     footer .team {
+        margin-top: 0.5em;
         color: #c3b091;
         font-weight: bold;
+    }
+    @media (max-width: 700px) {
+        h1 { font-size: 2.5em; }
+        .hero h2 { font-size: 1.5em; }
     }
 </style>
 </head>
 <body>
 
-<button class="toggle-theme" onclick="toggleTheme()">Toggle Theme</button>
 <canvas class="particles"></canvas>
-<div class="floating-icons">
-    <img src="https://cdn-icons-png.flaticon.com/512/3064/3064197.png" style="top:10%; left:20%;">
-    <img src="https://cdn-icons-png.flaticon.com/512/1828/1828884.png" style="top:50%; left:80%;">
-    <img src="https://cdn-icons-png.flaticon.com/512/942/942748.png" style="top:70%; left:10%;">
-</div>
+<div class="background-float"></div>
 
 <header>
     <h1>Remembery</h1>
@@ -180,9 +224,7 @@
 
 <section class="waitlist-section" id="waitlist">
     <h2>Join the Waitlist</h2>
-    <div class="form-container">
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScjPQxZDzWZmLYoXE6vk6ME7305WALcwoPGtZ-VVEeCsSPx0Q/viewform?embedded=true" width="100%" height="500" style="border:none;"></iframe>
-    </div>
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScjPQxZDzWZmLYoXE6vk6ME7305WALcwoPGtZ-VVEeCsSPx0Q/viewform?embedded=true">Loading…</iframe>
 </section>
 
 <footer>
@@ -191,32 +233,51 @@
 </footer>
 
 <script>
-const toggleTheme = () => {
-    document.body.classList.toggle('light');
-};
-const canvas = document.querySelector('.particles');
-const ctx = canvas.getContext('2d');
-let particles = [];
-const resizeCanvas = () => {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-};
-window.addEventListener('resize', resizeCanvas);
-resizeCanvas();
-for (let i = 0; i < 100; i++) {
-    particles.push({ x: Math.random()*canvas.width, y: Math.random()*canvas.height, r: Math.random()*2+1, dx:(Math.random()-0.5)*0.5, dy:(Math.random()-0.5)*0.5 });
-}
-const animate = () => {
-    ctx.clearRect(0,0,canvas.width,canvas.height);
-    particles.forEach(p => {
-        ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2); ctx.fillStyle='#c3b091'; ctx.fill();
-        p.x+=p.dx; p.y+=p.dy;
-        if(p.x<0||p.x>canvas.width) p.dx*=-1;
-        if(p.y<0||p.y>canvas.height) p.dy*=-1;
+    const canvas = document.querySelector('.particles');
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+    const resizeCanvas = () => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    };
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    for (let i = 0; i < 100; i++) {
+        particles.push({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            r: Math.random() * 2 + 1,
+            dx: (Math.random() - 0.5) * 0.5,
+            dy: (Math.random() - 0.5) * 0.5
+        });
+    }
+    const animate = () => {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        particles.forEach(p => {
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+            ctx.fillStyle = '#c3b091';
+            ctx.fill();
+            p.x += p.dx;
+            p.y += p.dy;
+            if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
+            if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+        });
+        requestAnimationFrame(animate);
+    };
+    animate();
+
+    const revealElements = document.querySelectorAll('header, .hero, .features, .testimonials, .waitlist-section');
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
     });
-    requestAnimationFrame(animate);
-};
-animate();
+    revealElements.forEach(el => observer.observe(el));
 </script>
 
 </body>
