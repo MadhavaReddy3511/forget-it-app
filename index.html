@@ -1,70 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- SEO Meta Tags -->
-<meta property="og:title" content="Forget It – Offline Memory Companion">
-<meta property="og:description" content="100% offline app to log and find lost items. No tracking, no ads.">
-<meta property="og:image" content="https://yourusername.github.io/forget-it-app/assets/app-preview.png">
-<meta property="og:url" content="https://yourusername.github.io/forget-it-app">
-<meta name="twitter:card" content="summary_large_image">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Forget It – Offline Memory Companion</title>
-  <meta name="description" content="100% offline app to log and find lost items. No tracking, no ads.">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <title>Forget It - Offline Memory Companion</title>
+  <style>
+    :root {
+      --teal: #2a9d8f;
+      --amber: #f4a261;
+      --slate: #2b2d42;
+      --light: #f8f9fa;
+    }
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      line-height: 1.6;
+      color: var(--slate);
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+      text-align: center;
+    }
+    h1 { color: var(--teal); font-size: 3rem; margin-bottom: 0.5rem; }
+    .tagline { font-size: 1.2rem; opacity: 0.8; margin-bottom: 3rem; }
+    .cta-button {
+      background: var(--teal);
+      color: white;
+      padding: 0.8rem 2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 500;
+      display: inline-block;
+      margin: 1rem 0;
+      transition: transform 0.2s;
+    }
+    .cta-button:hover { transform: translateY(-3px); }
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+    .feature {
+      flex: 1;
+      min-width: 200px;
+      padding: 1.5rem;
+      border-radius: 12px;
+      background: rgba(42, 157, 143, 0.1);
+    }
+    hr {
+      border: 0;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--teal), transparent);
+      margin: 3rem 0;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    input {
+      padding: 0.8rem;
+      margin: 0.5rem 0;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+    @media (prefers-color-scheme: dark) {
+      body { background: #121212; color: white; }
+      .feature { background: rgba(42, 157, 143, 0.2); }
+    }
+  </style>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="icon" href="assets/favicon.ico">
 </head>
 <body>
-  <header>
-    <h1 class="logo">Forget It</h1>
-    <p class="tagline">Your private, offline memory pal</p>
-  </header>
+  <h1>Forget It</h1>
+  <p class="tagline">Your private, offline memory pal</p>
+  
+  <hr>
 
-  <main>
-    <section class="hero">
-      <div class="hero-text">
-        <h2>Never lose your <span class="highlight">keys</span> again</h2>
-        <p>Log items in one tap. Recall them offline. Zero data shared.</p>
-        <a href="#waitlist" class="cta-button pulse">Join Waitlist</a>
-      </div>
-      <img src="assets/app-preview.png" alt="App screenshot" class="hero-image" loading="lazy">
-    </section>
+  <h2>Never lose your keys again</h2>
+  <p>Log items in one tap. Recall them offline. Zero data shared.</p>
+  <a href="#waitlist" class="cta-button">Join Waitlist</a>
 
-    <section class="features">
-      <div class="feature-card">
-        <div class="icon">📸</div>
-        <h3>1-Tap Logging</h3>
-        <p>Photo, voice, or text—your choice.</p>
-      </div>
-      <div class="feature-card">
-        <div class="icon">🔒</div>
-        <h3>100% Offline</h3>
-        <p>Your data never leaves your device.</p>
-      </div>
-      <div class="feature-card">
-        <div class="icon">🎙️</div>
-        <h3>Witty Personality</h3>
-        <p>Like a helpful (but sarcastic) friend.</p>
-      </div>
-    </section>
+  <div class="features">
+    <div class="feature">
+      <h3>1-Tap Logging</h3>
+      <p>Photo, voice, or text—your choice.</p>
+    </div>
+    <div class="feature">
+      <h3>100% Offline</h3>
+      <p>Your data never leaves your device.</p>
+    </div>
+    <div class="feature">
+      <h3>Witty Personality</h3>
+      <p>Like a helpful (but sarcastic) friend.</p>
+    </div>
+  </div>
 
-    <section id="waitlist" class="waitlist">
-      <h2>Get Early Access</h2>
-      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-        <input type="email" name="email" placeholder="Your email" required>
-        <button type="submit" class="cta-button">Notify Me</button>
-      </form>
-      <p class="privacy-note">We'll only email about the app launch. No spam.</p>
-    </section>
-  </main>
+  <hr>
 
-  <footer>
-    <p>© 2025 Forget It App | <a href="https://github.com/yourusername/forget-it-app">Open Source</a></p>
-  </footer>
-
-  <script src="script.js"></script>
+  <section id="waitlist">
+    <h2>Get Early Access</h2>
+    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <input type="email" name="email" placeholder="Your email" required>
+      <button type="submit" class="cta-button">Notify Me</button>
+    </form>
+  </section>
 </body>
 </html>
