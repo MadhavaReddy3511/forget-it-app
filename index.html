@@ -1,60 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Remembery — Never Forget Again</title>
-    <style>
-        body {
-            margin: 0;
-            height: 100vh;
-            background: linear-gradient(135deg, #121212, #1f1f1f);
-            color: #fff;
-            font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
-        h1 {
-            font-size: 3em;
-            margin-bottom: 0.5em;
-            color: #00d1b2;
-        }
-        p {
-            font-size: 1.2em;
-            max-width: 500px;
-            margin-bottom: 2em;
-            color: #ccc;
-        }
-        .cta-btn {
-            background-color: #00d1b2;
-            color: #fff;
-            padding: 0.8em 1.5em;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background 0.3s ease;
-        }
-        .cta-btn:hover {
-            background-color: #00b89d;
-        }
-        footer {
-            position: absolute;
-            bottom: 20px;
-            font-size: 0.9em;
-            color: #555;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Remembery — Your Memory, Reinvented</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background-color: #0d0d0d;
+      color: #fff;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    h1 {
+      color: #00d1b2;
+      font-size: 3em;
+      margin-top: 2em;
+      animation: fadeInDown 1s ease forwards;
+    }
+    p.subtitle {
+      color: #aaa;
+      margin: 0.5em 0 2em;
+      animation: fadeIn 2s ease forwards;
+    }
+    .hero-text {
+      font-size: 1.5em;
+      margin-bottom: 0.5em;
+      color: #fff;
+      animation: fadeInUp 1.5s ease forwards;
+    }
+    .cta-btn {
+      background-color: #00d1b2;
+      color: #fff;
+      padding: 0.8em 2em;
+      border: none;
+      border-radius: 5px;
+      font-size: 1em;
+      text-decoration: none;
+      cursor: pointer;
+      margin-top: 1em;
+      transition: background 0.3s ease, transform 0.3s ease;
+      animation: fadeInUp 2s ease forwards;
+    }
+    .cta-btn:hover {
+      background-color: #00b89d;
+      transform: scale(1.05);
+    }
+    .features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1em;
+      max-width: 700px;
+      margin: 3em auto;
+      width: 90%;
+    }
+    .feature {
+      background-color: #1a1a1a;
+      padding: 1.5em;
+      border-radius: 8px;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s ease forwards;
+    }
+    .feature:nth-child(1) { animation-delay: 0.5s; }
+    .feature:nth-child(2) { animation-delay: 1s; }
+    .feature:nth-child(3) { animation-delay: 1.5s; grid-column: span 2; }
+
+    iframe {
+      margin: 2em auto;
+      width: 90%;
+      max-width: 600px;
+      height: 500px;
+      border: none;
+      border-radius: 8px;
+      animation: fadeIn 2s ease forwards;
+    }
+    footer {
+      margin-top: auto;
+      padding: 2em;
+      color: #555;
+      font-size: 0.9em;
+    }
+    @media (max-width: 600px) {
+      .features {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
 <body>
 
-    <h1>Remembery</h1>
-    <p>Your personal memory tracker. Never forget where you left things again.</p>
-    <a href="#get-started" class="cta-btn">Get Started</a>
+  <h1>Remembery</h1>
+  <p class="subtitle">Your private, offline memory pal</p>
 
-    <footer>&copy; 2025 Remembery — Made with ❤️ on GitHub Pages</footer>
+  <p class="hero-text">Never lose your keys again</p>
+  <p>Log items in one tap. Recall them offline. Zero data shared.</p>
+
+  <a href="#waitlist" class="cta-btn">Join Waitlist</a>
+
+  <div class="features">
+    <div class="feature">
+      <h3>1-Tap Logging</h3>
+      <p>Photo, voice, or text—your choice.</p>
+    </div>
+    <div class="feature">
+      <h3>100% Offline</h3>
+      <p>Your data never leaves your device.</p>
+    </div>
+    <div class="feature">
+      <h3>Witty Personality</h3>
+      <p>Like a helpful (but sarcastic) friend.</p>
+    </div>
+  </div>
+
+  <h3 id="waitlist">Join the Waitlist</h3>
+  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdTxMvKmERHDvTHhNExbEw9JKAr4N7Fk5zzpbTz1XhOB02GCw/viewform?embedded=true">Loading…</iframe>
+
+  <footer>
+    &copy; 2025 Remembery — Made with ❤️ on GitHub Pages
+  </footer>
 
 </body>
 </html>
