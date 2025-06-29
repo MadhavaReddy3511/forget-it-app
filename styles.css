@@ -1,0 +1,157 @@
+:root {
+  --teal: #2a9d8f;
+  --amber: #f4a261;
+  --slate: #2b2d42;
+  --light: #f8f9fa;
+  --dark: #121212;
+}
+
+/* Light mode (default) */
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  color: var(--slate);
+  background: var(--light);
+  margin: 0;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  body {
+    background: var(--dark);
+    color: white;
+  }
+  .feature-card {
+    background: #1e1e1e !important;
+  }
+}
+
+/* Animations */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+/* Header */
+header {
+  text-align: center;
+  padding: 2rem 0;
+}
+.logo {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--teal);
+  margin: 0;
+}
+.tagline {
+  font-size: 1.2rem;
+  opacity: 0.8;
+}
+
+/* Hero section */
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.hero-text {
+  flex: 1;
+  min-width: 300px;
+}
+.hero-image {
+  flex: 1;
+  min-width: 300px;
+  max-width: 300px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+.highlight {
+  color: var(--amber);
+}
+
+/* Features */
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.feature-card {
+  background: white;
+  border-radius: 15px;
+  padding: 2rem;
+  width: 250px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+.feature-card .icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Waitlist */
+.waitlist {
+  text-align: center;
+  padding: 4rem 2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.waitlist form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.waitlist input {
+  padding: 0.8rem 1.2rem;
+  border: 2px solid #ddd;
+  border-radius: 50px;
+  min-width: 250px;
+  font-size: 1rem;
+}
+.privacy-note {
+  font-size: 0.9rem;
+  opacity: 0.7;
+  margin-top: 1rem;
+}
+
+/* CTA Button */
+.cta-button {
+  background: var(--teal);
+  color: white;
+  padding: 0.8rem 1.8rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: transform 0.2s;
+}
+.cta-button:hover {
+  transform: translateY(-3px);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem;
+  margin-top: 2rem;
+  opacity: 0.7;
+  font-size: 0.9rem;
+}
